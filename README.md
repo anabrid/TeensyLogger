@@ -67,5 +67,6 @@ The following commands are implemented in the firmware:
 - stop: Stop the current data gathering operation (or disarm the TeensyLogger
        if it has been armed but not yet triggered).
 
-
-- 
+## Perl module TeensyLogger
+The Perl module [TeensyLogger](TeensyLogger.pm) implements a simple object 
+oriented interface to the TeensyLogger.
