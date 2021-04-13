@@ -26,3 +26,15 @@ of the trigger input and stop data collection at the next rising edge.
 ## Firmware
 The firmware for the TeensyLogger is written in C++ using the Teensyduino
 IDE and can be found here: [Firmware](TeensyLogger)
+
+The firmware can be used either manually by connecting a terminal application
+to the USB port of the TeensyLogger or by using the Perl module TeensyLogger.pm
+described below.
+
+The following commands are implemented in the firmware:
+
+- ?: Print help.
+- arm: Arm the TeensyLogger for data sampling which will commence either when
+       an external trigger signal is fed to the TeensyLogger or if the start
+       command (see below) is issued.
+
