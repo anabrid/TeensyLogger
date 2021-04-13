@@ -187,7 +187,7 @@ get\_data()
 The get\_data() method reads data from the data logger and returns a
 reference to an array containing array references.
 
-plot(title =\> '...', terminal =\> '...', output =\> '...', yrange =\> '...', xrange = '...', columns =\> '..., ..., ...') {#plot-title-...-terminal-...-output-...-yrange-...-xrange-...-columns}
+plot(title =\> '...', terminal =\> '...', output =\> '...', yrange =\> '...', xrange = '...', columns =\> '..., ..., ...') {}
 --------------------------------------------------------------------------------------------------------------------------
 
 plot() uses gnuplot (which must be installed and be found in the path
