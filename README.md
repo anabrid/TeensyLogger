@@ -37,4 +37,35 @@ The following commands are implemented in the firmware:
 - arm: Arm the TeensyLogger for data sampling which will commence either when
        an external trigger signal is fed to the TeensyLogger or if the start
        command (see below) is issued.
+- benchmark: This will perform 1000 AD conversions and return the time 
+       required for a single conversion of a given number of input channels.
+- channels=x: This command is used to set the number of channels to be sampled.
+       Valid values of x are in the interval 1 to 8.
+- dump: Dump all data gathered during a sampling period to the USB port. The
+       values are printed as floating point numbers in the interval -1..1,
+       with individual channels delimited by whitespace.
+- interval=x: Set the sampling interval to x microseconds (it should not be 
+       set to a value lower than that returned by executing the benchmark
+       command to avoid data loss during sampling).
+- ms=x: Set the maximum number of sampling points to x. When x is reached 
+       during a data gathering operation, sampling is automatically stopped.
+- reset: Reset the TeensyLogger to its default settings (one channel, no
+       oversampling, 1000 microseconds sampling interval).
+- sample: Perform a single sampling operation on all configured channels.
+- oversampling=x: If values must be smoothed, this can be done by 
+       oversampling i.e. reading multiple times from each channel and then
+       computing the arithmetic mean over these conversion results. The value
+       x is interpreted as exponent of 2 ** x i.e. x=0 results in no 
+       oversampling and is the default setting. To perform four consecutive
+       reads on each channel during each sampling operating x=2 should be
+       set. Please note that oversampling slows the sampling process down 
+       quite considerably and also leads to a larger phase error between 
+       the individual channels, so it should be used with caution if at all.
+- start: Start data gathering. This will end either when the stop command
+       is issued or when the maximum number of samples is reached.
+- status: Print the current system status.
+- stop: Stop the current data gathering operation (or disarm the TeensyLogger
+       if it has been armed but not yet triggered).
 
+
+- 

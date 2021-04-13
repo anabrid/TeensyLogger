@@ -228,6 +228,7 @@ void loop() {
       active_channels = 1;
       state = STATE_IDLE;
       max_samples = DEPTH;
+      interval = 1000;
       Serial.print("\tReset\n");
     } else if (!strcmp(command, "sample")) {
       sample();
