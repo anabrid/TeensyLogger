@@ -97,17 +97,17 @@ oriented interface to the TeensyLogger.
         '...')](#store_data-filename-...-delimiter-...-header)
     -   [get\_response()](#get_response)
 
-NAME {#NAME}
+NAME 
 ====
 
 TeensyLogger - Perl interface to a simple Teensy 4.1 based data logger.
 
-VERSION {#VERSION}
+VERSION 
 =======
 
 This document refers to version 0.1 of TeensyLogger
 
-SYNOPSIS {#SYNOPSIS}
+SYNOPSIS 
 ========
 
 The module can be used as follows:
@@ -144,7 +144,7 @@ The module can be used as follows:
 
         $logger->reset();                   # Reset the data logger to its initial configuration
 
-DESCRIPTION {#DESCRIPTION}
+DESCRIPTION 
 ===========
 
 This module implements a simple object oriented interface to the Teensy
@@ -153,10 +153,10 @@ use with analog and hybrid computers but can be used in any environment
 featuring signal levels between -10 V and +10 V (+/-15 V being the
 absolute permitted maximum).
 
-Function and methods {#Function-and-methods}
+Function and methods 
 ====================
 
-new(port =\> 'port name', timeout =\> timeout in milliseconds) {#new-port-port-name-timeout-timeout-in-milliseconds}
+new(port =\> 'port name', timeout =\> timeout in milliseconds) 
 --------------------------------------------------------------
 
 This function generates a new TeensyLogger object. It requires the
@@ -187,7 +187,7 @@ get\_data()
 The get\_data() method reads data from the data logger and returns a
 reference to an array containing array references.
 
-plot(title =\> '...', terminal =\> '...', output =\> '...', yrange =\> '...', xrange = '...', columns =\> '..., ..., ...') {}
+plot(title =\> '...', terminal =\> '...', output =\> '...', yrange =\> '...', xrange = '...', columns =\> '..., ..., ...')
 --------------------------------------------------------------------------------------------------------------------------
 
 plot() uses gnuplot (which must be installed and be found in the path
@@ -221,19 +221,19 @@ sample()
 
 The sample() method performs a single sampling operation.
 
-set\_channels(value) {#set_channels-value}
+set\_channels(value) 
 --------------------
 
 set\_channels(value) sets the number of channels to be sampled. The
 number of channels must be greater than zero and less or equal to eight.
 
-set\_interval(value) {#set_interval-value}
+set\_interval(value) 
 --------------------
 
 Calling set\_interval(value) sets the interval between two consecutive
 samples to the specified value in microseconds.
 
-set\_oversampling(value) {#set_oversampling-value}
+set\_oversampling(value) 
 ------------------------
 
 Typically, the data logger samples every data point once. To smooth the
@@ -245,7 +245,7 @@ data point. Note that oversampling slows down the data sampling
 considerably and also introduces increased delay between successive
 channels. Thus it should be used with caution!
 
-set\_max\_samples(value) {#set_max_samples-value}
+set\_max\_samples(value) 
 ------------------------
 
 Using the method set\_max\_samples(...) it is possible to limit the
@@ -274,7 +274,7 @@ or start() has not been called prior to this. It returns a character
 string which will be either "Stopped" or "Disarmed" depending on the
 state of the data logger.
 
-store\_data(filename =\> '...', delimiter =\> '...', header =\> '...') {#store_data-filename-...-delimiter-...-header}
+store\_data(filename =\> '...', delimiter =\> '...', header =\> '...') 
 ----------------------------------------------------------------------
 
 Calling store\_data(...) stores all data gathered so far in a file which
