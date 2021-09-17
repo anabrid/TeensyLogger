@@ -3,6 +3,7 @@
  *  
  *  17.03.2021  B. Ulmann Start of implementation, nothing fancy yet, everything out of the box.
  *  13.04.2021  B. Ulmann Added calibration and floating point output, adapted to Perl library TeensyLogger.
+ *  17.09.2021  B. Ulmann Data is written out as a single large chunk to speed things up considerably.
  */
  
 /*
@@ -192,14 +193,16 @@ void loop() {
       }
     } else if (!strcmp(command, "dump")) {
       Serial.print(String(next_sample) + " samples\n");
-      for (unsigned int i = 0; i < next_sample; i++) {
-        for (unsigned int j = 0; j < active_channels; j++) {
+      for (int i = 0; i < next_sample; i++) {
+        for (int j = 0; j < active_channels; j++) {
           float value = 2 * (float) (data[i][j] - zero[j]) / (float) (vpos[j] - vneg[j]);
           Serial.print(value, 3);
-          Serial.print("\t");
+          if (j < active_channels - 1) 
+            Serial.print(",");
         }
-        Serial.print("\n");
+        Serial.print(";");
       }
+      Serial.print("\n");
     } else if (!strcmp(command, "interval")) {
       strcpy(value, tokenize((char *) 0, (char *) "="));
       interval = atoi(value);
